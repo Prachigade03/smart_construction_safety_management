@@ -59,7 +59,7 @@ const Features = () => {
   return (
     <div className="min-h-screen py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -80,6 +80,7 @@ const Features = () => {
             >
               <div className="bg-card border border-border rounded-3xl overflow-hidden shadow-soft">
                 <div className="lg:flex">
+                  
                   {/* Content */}
                   <div className="lg:w-1/2 p-8 lg:p-12">
                     <div className="flex items-center mb-6">
@@ -110,32 +111,32 @@ const Features = () => {
                           >
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                             {capability}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                      {/* Action Button */}
-                      <div className="mt-8">
-                        <Button 
-                          onClick={() => {
-                            if (feature.title === "AI Safety Chatbot") {
-                              navigate("/safety-chatbot");
-                            } else if (feature.title === "PPE Detection System") {
-                              navigate("/");
-                            } else {
-                              navigate("/");
-                            }
-                          }}
-                          className="w-full group"
-                          size="lg"
-                        >
-                          {feature.title === "PPE Detection System" && "Launch PPE Scanner"}
-                          {feature.title === "Virtual Training Module" && "Start VR Training"}
-                          {feature.title === "AI Safety Chatbot" && "Ask about Safety"}
-                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                      </div>
+                    {/* Action Button */}
+                    <div className="mt-8">
+                      <Button 
+                        onClick={() => {
+                          if (feature.title === "AI Safety Chatbot") {
+                            navigate("/safety-chatbot");
+                          } else if (feature.title === "PPE Detection System") {
+                            navigate("/ppe-scanner"); // ✅ Updated to navigate to PPE scanner
+                          } else if (feature.title === "Virtual Training Module") {
+                            navigate("/vr-training"); // ✅ added new navigation
+                          }
+                        }}
+                        className="w-full group"
+                        size="lg"
+                      >
+                        {feature.title === "PPE Detection System" && "Launch PPE Scanner"}
+                        {feature.title === "Virtual Training Module" && "Start VR Training"}
+                        {feature.title === "AI Safety Chatbot" && "Ask about Safety"}
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </div>
                   </div>
 
                   {/* Visual */}
@@ -152,6 +153,7 @@ const Features = () => {
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
             </section>
